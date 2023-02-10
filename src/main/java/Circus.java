@@ -20,15 +20,17 @@ public class Circus {
         int total = 0;
         for (Equipment e : equipments) {
             if (e.getValue() <= 5) {
+                // This is a guard clause
                 System.out.println("Ignoring low value item: " + e.getValue());
-            } else {
-                total += e.getValue();
-                System.out.println("Adding item value: " + e.getValue());
-                // some
-                // more
-                // code
-                // here ...
+                continue;
             }
+            // Happy path should be indented in front, to be more obvious.
+            total += e.getValue();
+            System.out.println("Adding item value: " + e.getValue());
+            // some
+            // more
+            // code
+            // here ... remove these, too many nonsense.
         }
         return total;
     }
